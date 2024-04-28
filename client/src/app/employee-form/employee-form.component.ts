@@ -21,6 +21,7 @@ import { Employee } from '../employee'
 })
 export class EmployeeFormComponent {
   initialState = input<Employee>();
+  submitButtonText = input.required<string>();
 
   @Output()
   formValuesChanged = new EventEmitter<Employee>();

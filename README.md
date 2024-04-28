@@ -11,7 +11,13 @@ Following this tutorial was a refresher on Angular concepts, and seeing how Angu
 Following the tutorial, I want to solidify and expand what I've learned by making some changes to the tutorial application.
 
 * [x] Fix the form so that it says "Edit" instead of "Add" when appropriate
-* [ ] Convert templates from inline to extracted files
-* [ ] Same with styles
+* [x] Convert templates from inline to extracted files
+* [x] Same with styles
 * [ ] Convert all alert popups to in-app messages
 * [ ] Learn more about reactive forms and add more fields to tinker with other functionality
+
+## Reasoning for Extracting Templates/Styles
+
+This turned out to be very easy to do, just changing `template` and `styles` to `templateUrl` and `styleUrls` respectively, to point to their files. These were fairly simple templates and very simple styles in the first place, so why bother?
+
+Mainly, having them extracted lets my IDE use the appropriate helper plugins for things like autocompletion and prettifying. I also just think it's cleaner than using multiline strings in the component source code, even if these were fairly short.

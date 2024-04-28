@@ -18,7 +18,10 @@ import { MatCardModule } from '@angular/material/card';
         <mat-card-title>Add a New Employee</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <app-employee-form (formSubmitted)="addEmployee($event)"></app-employee-form>
+        <app-employee-form 
+          submitButtonText="Add"
+          (formSubmitted)="addEmployee($event)"
+        ></app-employee-form>
       </mat-card-content>
     </mat-card>
   `,

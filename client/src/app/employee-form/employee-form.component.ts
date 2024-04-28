@@ -16,64 +16,8 @@ import { Employee } from '../employee'
     MatRadioModule,
     MatButtonModule,
   ],
-  template: `
-    <form
-      class="employee-form"
-      autocomplete="off"
-      [formGroup]="employeeForm"
-      (submit)="submitForm()"
-    >
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" formControlName="name" required />
-        @if (name.invalid) {
-          <mat-error>Name must be at least 3 characters long.</mat-error>
-        }
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Position</mat-label>
-        <input
-          matInput
-          placeholder="Position"
-          formControlName="position"
-          required
-        />
-        @if (position.invalid) {
-          <mat-error>Position must be at least 5 characters long.</mat-error>
-        }
-      </mat-form-field>
-
-      <mat-radio-group formControlName="level" aria-label="Select an option">
-        <mat-radio-button name="level" value="junior" required>Junior</mat-radio-button>
-        <mat-radio-button name="level" value="mid">Mid</mat-radio-button>
-        <mat-radio-button name="level" value="senior">Senior</mat-radio-button>
-      </mat-radio-group>
-      <br />
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        [disabled]="employeeForm.invalid"
-      >
-        Add
-      </button>
-    </form>
-  `,
-  styles: `
-  .employee-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem;
-  }
-  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
-    margin-left: 16px;
-  }
-  .mat-mdc-form-field {
-    width: 100%;
-  }
-  `
+  templateUrl: './employee-form.component.html',
+  styleUrls: ['./employee-form.component.css']
 })
 export class EmployeeFormComponent {
   initialState = input<Employee>();

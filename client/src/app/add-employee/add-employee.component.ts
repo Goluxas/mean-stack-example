@@ -12,17 +12,8 @@ import { MatCardModule } from '@angular/material/card';
     EmployeeFormComponent,
     MatCardModule
   ],
-  template: `
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Add a New Employee</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <app-employee-form (formSubmitted)="addEmployee($event)"></app-employee-form>
-      </mat-card-content>
-    </mat-card>
-  `,
-  styles: ``
+  templateUrl: './add-employee.component.html',
+  styles: ``,
 })
 export class AddEmployeeComponent {
   constructor(

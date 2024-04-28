@@ -10,7 +10,7 @@ Following this tutorial was a refresher on Angular concepts, and seeing how Angu
 
 Following the tutorial, I want to solidify and expand what I've learned by making some changes to the tutorial application.
 
-* [ ] Fix the form so that it says "Edit" instead of "Add" when appropriate
+* [x] Fix the form so that it says "Edit" instead of "Add" when appropriate
 * [ ] Convert templates from inline to extracted files
 * [ ] Same with styles
 * [ ] Convert all alert popups to in-app messages

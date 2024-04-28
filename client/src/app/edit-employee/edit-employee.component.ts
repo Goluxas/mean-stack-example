@@ -16,6 +16,7 @@ import { Router, ActivatedRoute } from '@angular/router';
       </mat-card-header>
       <mat-card-content>
         <app-employee-form
+          submitButtonText="Edit"
           [initialState]="employee()"
           (formSubmitted)="editEmployee($event)"
         ></app-employee-form>

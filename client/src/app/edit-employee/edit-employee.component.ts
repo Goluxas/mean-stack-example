@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-edit-employee',
@@ -18,13 +19,14 @@ export class EditEmployeeComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute, 
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')
     if (!id) {
-      alert('No id provided')
+      this.snackBar.open('No id provided', 'Dismiss', {duration: 5000})
     }
 
     this.employeeService.getEmployee(id!)
@@ -39,7 +41,7 @@ export class EditEmployeeComponent implements OnInit {
           this.router.navigate(['/'])
         },
         error: (error) => {
-          alert('Failed to update employee')
+          this.snackBar.open('Failed to update employee', 'Dismiss', {duration: 5000})
           console.error(error)
         }
       })

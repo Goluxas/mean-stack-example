@@ -4,13 +4,14 @@ import { EmployeeFormComponent } from '../employee-form/employee-form.component'
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-employee',
   standalone: true,
   imports: [
     EmployeeFormComponent,
-    MatCardModule
+    MatCardModule,
   ],
   templateUrl: './add-employee.component.html',
   styles: ``,
@@ -18,7 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 export class AddEmployeeComponent {
   constructor(
     private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private snackBar: MatSnackBar,
   ) {}
 
   addEmployee(employee: Employee) {
@@ -27,7 +29,7 @@ export class AddEmployeeComponent {
         this.router.navigate(['/'])
       },
       error: (error) => {
-        alert('Failed to create employee')
+        this.snackBar.open('Failed to create employee', "Dismiss", {duration: 5000})
         console.error(error)
       },
     })

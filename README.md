@@ -13,7 +13,7 @@ Following the tutorial, I want to solidify and expand what I've learned by makin
 * [x] Fix the form so that it says "Edit" instead of "Add" when appropriate
 * [x] Convert templates from inline to extracted files
 * [x] Same with styles
-* [ ] Convert all alert popups to in-app messages
+* [x] Convert all alert popups to in-app messages
 * [ ] Learn more about reactive forms and add more fields to tinker with other functionality
 
 ## Reasoning for Extracting Templates/Styles
